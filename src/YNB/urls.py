@@ -18,7 +18,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-
+    url(r'^$', Home.as_view, name='home'),
     # url(r'^api/auth/', include('accounts.api.urls', namespace='api-auth')),
     url(r'^api/user/', include('accounts.api.user.urls', namespace='api-user')),
     url(r'^api/books/', include('books.api.urls', namespace='api-books')),
