@@ -30,3 +30,16 @@ class BookForm(forms.ModelForm):
             raise forms.ValidationError('Content or image is required.')
         return super().clean(*args, **kwargs)
 
+    #TODO: things to add:
+        #todo: search data base of books
+        #todo: allow for auto completion of search
+        #todo: Search by title, author, isbn, category, address, zipcode
+        #todo: address will be tied with Owner's address location
+
+        #todo: set up AddBookForm.py
+            #todo: once book is found or entered
+            #todo: set rate of book
+            #todo: book schedule --> similar to getaround car schedule
+
+
+

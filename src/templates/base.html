@@ -31,14 +31,14 @@
 
     					<ul class="nav navbar-nav navbar-right">
     						{% if user.is_authenticated %}
-                      <li><a href="{% url 'posts:create' %}" class="btn btn-simple">Post</a></li>
-                      <li><a href="{% url 'groups:all' %}" class="btn btn-simple">Groups</a></li>
-                      <li><a href="{% url 'groups:create' %}" class="btn btn-simple">Create Group</a></li>
-                      <li><a href="{% url 'accounts:logout' %}" class="btn btn-simple">Log out</a></li>
+                      <li><a href="{% comment %}{% url 'posts:create' %}{% endcomment %}" class="btn btn-simple">Post</a></li>
+                      <li><a href="{% comment %}{% url 'groups:all' %}{% endcomment %}" class="btn btn-simple">Groups</a></li>
+                      <li><a href="{% comment %}{% url 'groups:create' %}{% endcomment %}" class="btn btn-simple">Create Group</a></li>
+                      <li><a href="{% comment %}{% url 'accounts:logout' %}{% endcomment %}" class="btn btn-simple">Log out</a></li>
     						{% else %}
-    						      <li><a href="{% url 'groups:all' %}"class="btn btn-simple">Groups</a></li>
-    						      <li><a href="{% url 'accounts:login' %}" class="btn btn-simple">Log in</a></li>
-    						      <li><a href="{% url 'accounts:signup' %}" class="btn btn-simple">Sign up</a></li>
+    						      <li><a href="{% comment %}{% url 'groups:all' %}{% endcomment %}"class="btn btn-simple">Groups</a></li>
+    						      <li><a href="{% comment %}{% url 'accounts:login' %}{% endcomment %}" class="btn btn-simple">Log in</a></li>
+    						      <li><a href="{% comment %}{% url 'accounts:signup' %}{% endcomment %}" class="btn btn-simple">Sign up</a></li>
     						{% endif %}
     					</ul>
 
@@ -56,5 +56,5 @@
 
     </body>
 
-<script src="{% static "simplesocial/js/master.js"%}" type="text/javascript" ></script>
+{#<script src="{% static "simplesocial/js/master.js"%}" type="text/javascript" ></script>#}
 </html>
