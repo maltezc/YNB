@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: black;
+  color:white;
+}
+
+
+.active-cyan .fa, .active-cyan-2 .fa {
+    color: #4dd0e1;
+}

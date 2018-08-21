@@ -7,7 +7,7 @@ from django.shortcuts import get_object_or_404
 
 from accounts.api.permissions import IsOwnerOrReadOnly
 from books.models import Books
-from .serializers import StatusSerializer
+from .serializers import BooksSerializer
 
 
 def is_json(json_data):
@@ -24,7 +24,7 @@ class BookAPIDetailView(
     mixins.DestroyModelMixin,
     generics.RetrieveAPIView):
     permission_classes      = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]    # authentication_classes  = []
-    serializer_class        = StatusSerializer  # necessary
+    serializer_class        = BooksSerializer  # necessary
     queryset                = Books.objects.all()
     lookup_field            = 'id'
 
@@ -51,7 +51,7 @@ class BookAPIView(
     mixins.CreateModelMixin,
     generics.ListAPIView):
     permission_classes          = [permissions.IsAuthenticatedOrReadOnly] # have to be logged in# if IsAuthenticatedOrReadOnly, non-logged in user cannot post, data is only read only # this demands that the person had to be authenticated inorder to do the things in this view. ie: create a post
-    serializer_class            = StatusSerializer #necessary
+    serializer_class            = BooksSerializer #necessary
     passed_id                   = None
     search_fields               = ('user__username', 'content', 'user__email')
     ordering_fields             = ('user__username', 'timestamp')

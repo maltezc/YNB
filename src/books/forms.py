@@ -7,9 +7,14 @@ class BookForm(forms.ModelForm):
         model = Books
         fields = [
             'user',
+            'image',
+            'title',
             'author',
             'content',
-            'image'
+            'rentalRate',
+            'condition',
+
+
         ]
 
     def clean_content(self, *args, **kwargs):

@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.HomePage.as_view(), name='home'),
     url(r"^thanks/$", views.ThanksPage.as_view(), name="thanks"),
+    url(r"^HowItWorks/$", views.HowItWorksPage.as_view(), name="HowItWorks"),
     # url(r'^api/auth/', include('accounts.api.urls', namespace='api-auth')),
     url(r'^api/user/', include('accounts.api.user.urls', namespace='api-user')),
     url(r'^api/books/', include('books.api.urls', namespace='api-books')),

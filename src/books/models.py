@@ -18,7 +18,7 @@ class BooksManager(models.Manager):
 
 class Books(models.Model):
     user            = models.ForeignKey(settings.AUTH_USER_MODEL) # user instance .save
-    book            = models.TextField()
+    title           = models.TextField()
     author          = models.TextField()
     content         = models.TextField(null=True, blank=True)
     rentalRate      = models.IntegerField()
@@ -26,6 +26,8 @@ class Books(models.Model):
     image           = models.ImageField(upload_to=upload_book_image, null=True, blank=True) # great 3rd part package = django storanges --> AWS#pip install pillow to handle images
     updated         = models.DateTimeField(auto_now=True)
     timestamp       = models.DateTimeField(auto_now_add=True)
+    condition       = models.CharField(null=True, blank=True, max_length=240)
+
 
     objects = BooksManager
 

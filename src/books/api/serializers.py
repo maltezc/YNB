@@ -13,7 +13,7 @@ Serializers --> validate Data
 '''
 
 
-class StatusSerializer(serializers.ModelSerializer):
+class BooksSerializer(serializers.ModelSerializer):
     uri             = serializers.SerializerMethodField(read_only=True)
     # user          = serializers.SerializerMethodField(read_only=True)
     user            = UserPublicSerializer(read_only=True)
@@ -65,7 +65,7 @@ class StatusSerializer(serializers.ModelSerializer):
         return data
 
 
-class StatusInLineUserSerializer(StatusSerializer):
+class BooksInLineUserSerializer(BooksSerializer):
     # uri         = serializers.SerializerMethodField(read_only=True)
 
     class Meta:

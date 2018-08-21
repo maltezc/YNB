@@ -14,3 +14,6 @@ class HomePage(TemplateView):
 
 class ThanksPage(TemplateView):
     template_name = 'thanks.html'
+
+class HowItWorksPage(TemplateView):
+    template_name = 'HowItWorks.html'

@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Star Social</title>
+    <title>Your Neighbor's Bookshelf</title>
     <!-- Latest compiled and minified CSS -->
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -17,7 +17,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
-    <link rel="stylesheet" href="{% static 'simplesocial/css/master.css'%}">
+    <link rel="stylesheet" href="{% static 'YNB/css/master.css'%}">
 
 
   </head>
@@ -27,14 +27,17 @@
 
     <nav class="navbar mynav" role="navigation" id="navbar">
     			<div class="container">
-            <a class="navbar-brand mynav" href="{% url 'home' %}">Star Social</a>
+            <a class="navbar-brand mynav" href="{% url 'home' %}">Your Neighbor's Bookshelf</a>
 
     					<ul class="nav navbar-nav navbar-right">
     						{% if user.is_authenticated %}
-                      <li><a href="{% comment %}{% url 'posts:create' %}{% endcomment %}" class="btn btn-simple">Post</a></li>
-                      <li><a href="{% comment %}{% url 'groups:all' %}{% endcomment %}" class="btn btn-simple">Groups</a></li>
-                      <li><a href="{% comment %}{% url 'groups:create' %}{% endcomment %}" class="btn btn-simple">Create Group</a></li>
-                      <li><a href="{% comment %}{% url 'accounts:logout' %}{% endcomment %}" class="btn btn-simple">Log out</a></li>
+                      <li><a href="{% comment %}{% url 'posts:create' %}{% endcomment %}" class="btn btn-simple">Search</a></li>
+                      <li><a href="{% comment %}{% url 'groups:all' %}{% endcomment %}" class="btn btn-simple">Add a book</a></li>
+                      <li><a href="{% url 'HowItWorks' %}" class="btn btn-simple">How it works</a></li>
+                      <li><a href="{% comment %}{% url 'accounts:logout' %}{% endcomment %}" class="btn btn-simple">User Profile</a></li>
+{#                                About me settings / profile pic#}
+{#                                Books renting & Books leased out & stats#}
+{#                                Logout#}
     						{% else %}
     						      <li><a href="{% comment %}{% url 'groups:all' %}{% endcomment %}"class="btn btn-simple">Groups</a></li>
     						      <li><a href="{% comment %}{% url 'accounts:login' %}{% endcomment %}" class="btn btn-simple">Log in</a></li>

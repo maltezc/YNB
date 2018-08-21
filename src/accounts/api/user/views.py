@@ -3,7 +3,7 @@ from rest_framework import generics, permissions, pagination
 from accounts.api.permissions import AnonPermissionOnly
 from rest_framework.response import Response
 
-from books.api.serializers import StatusInLineUserSerializer
+from books.api.serializers import BooksInLineUserSerializer
 from books.api.views import BookAPIView
 from books.models import Books
 
@@ -14,7 +14,7 @@ User = get_user_model()
 
 class UserDetailAPIView(generics.RetrieveAPIView):
     # permissions_classes = [permissions.IsAuthenticatedOrReadOnly]
-    queryset            =  User.objects.filter(is_active=True)
+    queryset            = User.objects.filter(is_active=True)
     serializer_class    = UserDetailSerializer
     lookup_field        = 'username'
 
@@ -23,7 +23,7 @@ class UserDetailAPIView(generics.RetrieveAPIView):
 
 
 class UserBookAPIView(BookAPIView):
-    serializer_class    = StatusInLineUserSerializer
+    serializer_class    = BooksInLineUserSerializer
 
     def get_queryset(self, *args, **kwargs):
         username = self.kwargs.get("username", None)

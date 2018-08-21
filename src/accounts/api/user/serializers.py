@@ -6,7 +6,7 @@ from django.utils import timezone
 from rest_framework import serializers
 from rest_framework.reverse import reverse as api_reverse #<-- similar to regular django reverse #another version is django hosts
 
-from books.api.serializers import StatusInLineUserSerializer
+from books.api.serializers import BooksInLineUserSerializer
 
 User = get_user_model()
 
@@ -50,7 +50,7 @@ class UserDetailSerializer(serializers.ModelSerializer):
         qs = obj.status_set.all().order_by("-timestamp") # [:10]
         data = {
             'uri': self.get_uri(obj) + "status/",
-            'last': StatusInLineUserSerializer(qs.first(), context={'request': request}).data,
-            'recent': StatusInLineUserSerializer(qs[:limit], many=True, context={'request': request}).data
+            'last': BooksInLineUserSerializer(qs.first(), context={'request': request}).data,
+            'recent': BooksInLineUserSerializer(qs[:limit], many=True, context={'request': request}).data
         }
         return data
