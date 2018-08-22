@@ -57,6 +57,8 @@ class BookAPIView(
     ordering_fields             = ('user__username', 'timestamp')
     queryset                    = Books.objects.all()
 
+    template_name = "books/book_list.html"
+
     # def get_queryset(self):
     #     # /api/status/?q=delete will find all content with keyword delete
     #     request = self.request

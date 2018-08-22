@@ -7,6 +7,8 @@ from books.models import Books
 '''
 **serializers turn data into JSON data which make it able to be stored on drives**
 JSON -- JavaScript Object Notation
+json.dumps(data)
+data = {'abc': 123}
 
 Serializers --> JSON
 Serializers --> validate Data
@@ -46,7 +48,7 @@ class BooksSerializer(serializers.ModelSerializer):
 
     def get_uri(self, obj):
         request = self.context.get('request')
-        return api_reverse('api-status:detail', kwargs={'id': obj.id}, request=request)
+        return api_reverse('api-books:detail', kwargs={'id': obj.id}, request=request)
 
     #field level validation
     # def validate_<fieldname>(self, value):

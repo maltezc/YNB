@@ -24,6 +24,7 @@ class UserDetailAPIView(generics.RetrieveAPIView):
 
 class UserBookAPIView(BookAPIView):
     serializer_class    = BooksInLineUserSerializer
+    
 
     def get_queryset(self, *args, **kwargs):
         username = self.kwargs.get("username", None)

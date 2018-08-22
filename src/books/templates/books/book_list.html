@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block book_content %}
+<div class="col-md-8">
+	{% for book in book_list %}
+        {% include "books/_book.html" %}
+	{% endfor %}
+</div>
+{% endblock %}

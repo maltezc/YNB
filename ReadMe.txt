@@ -24,3 +24,10 @@ password: LiquidYNB101$
 
 python manage.py createsuperuser
 
+Git master branch location:
+/Desktop/pycharmprojects/YNBenv/
+
+for tree:
+in terminal run with brew installed:
+tree
+
