@@ -31,3 +31,10 @@ for tree:
 in terminal run with brew installed:
 tree
 
+for "guts of django" -->
+In your environment there is a directory where all your installed packages are. something
+like `/lib/python3.6/site-packages/` there is a directory in your site-packages called `django` which
+is the django package that was installed﻿
+
+
+

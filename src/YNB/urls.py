@@ -16,15 +16,27 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from . import views
+from rest_framework import routers
+from .views import BookViewSet
+
+
+router = routers.DefaultRouter()
+router.register(r'books', BookViewSet, base_name='books') # --> http://127.0.0.1:8000/api/books/api/books/
+
+
+
 
 
 urlpatterns = [
+    url(r'^api/', include(router.urls)),
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.HomePage.as_view(), name='home'),
-    url(r"^thanks/$", views.ThanksPage.as_view(), name="thanks"),
-    url(r"^HowItWorks/$", views.HowItWorksPage.as_view(), name="HowItWorks"),
-    # url(r'^api/auth/', include('accounts.api.urls', namespace='api-auth')),
-    url(r'^api/user/', include('accounts.api.user.urls', namespace='api-user')),
-    url(r'^api/books/', include('books.api.urls', namespace='api-books')),
+    # url(r"^thanks/$", views.ThanksPage.as_view(), name="thanks"),
+    # url(r"^HowItWorks/$", views.HowItWorksPage.as_view(), name="HowItWorks"),
+    # # url(r'^api/auth/', include('accounts.api.urls', namespace='api-auth')),
+    # url(r'^api/user/', include('accounts.api.user.urls', namespace='api-user')),
+    # # url(r'^api-books/', include('books.api.urls', namespace='api-books')),
+    # url(r'^api-books/', include(('books.urls', 'books'), namespace='api-books')),
+
 
 ]

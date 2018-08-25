@@ -32,6 +32,9 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+#todo add react frontend
+
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

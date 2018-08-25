@@ -4,7 +4,7 @@ from accounts.api.permissions import AnonPermissionOnly
 from rest_framework.response import Response
 
 from books.api.serializers import BooksInLineUserSerializer
-from books.api.views import BookAPIView
+# from books.api.views import BookAPIView
 from books.models import Books
 
 from accounts.api.user.serializers import UserDetailSerializer
@@ -22,8 +22,8 @@ class UserDetailAPIView(generics.RetrieveAPIView):
         return {'request': self.request}
 
 
-class UserBookAPIView(BookAPIView):
-    serializer_class    = BooksInLineUserSerializer
+# class UserBookAPIView(BookAPIView):
+#     serializer_class    = BooksInLineUserSerializer
     
 
     def get_queryset(self, *args, **kwargs):

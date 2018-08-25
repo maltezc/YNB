@@ -17,3 +17,23 @@ class ThanksPage(TemplateView):
 
 class HowItWorksPage(TemplateView):
     template_name = 'HowItWorks.html'
+
+
+from rest_framework import permissions, viewsets
+from accounts.api.permissions import IsOwnerOrReadOnly
+from books.models import Books
+from .serializers import BooksSerializer
+from rest_framework.response import Response
+
+
+
+class BookViewSet(viewsets.ViewSet):
+    # permission_classes      = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]    # authentication_classes  = []
+    # serializer_class        = BooksSerializer  # necessary
+    # queryset                = Books.objects.all()
+    # lookup_field            = 'id'
+    # search_fields           = ('user__username', 'content', 'user__email')
+    # ordering_fields         = ('user__username', 'timestamp')
+
+    def list(self, request):
+        return Response('Success')
