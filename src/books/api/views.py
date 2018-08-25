@@ -24,13 +24,16 @@ def is_json(json_data):
     return is_valid
 
 
-class BookViewSet(viewsets.ViewSet):
+class BookViewSet(viewsets.ModelViewSet):
     permission_classes      = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]    # authentication_classes  = []
     serializer_class        = BooksSerializer  # necessary
+
     queryset                = Books.objects.all()
     lookup_field            = 'id'
     search_fields           = ('user__username', 'content', 'user__email')
     ordering_fields         = ('user__username', 'timestamp')
+
+
 
 
 # class BookAPIDetailView(
