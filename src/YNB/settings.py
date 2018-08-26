@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
     #3rd party
     'bootstrap3',
+    'corsheaders',
     'django_extensions',
     'rest_framework',
 
@@ -56,6 +57,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware', # added for CORS headers
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -133,5 +135,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+CORS_ORIGIN_WHITELIST = 'localhost:3000', #whitelists the localhost to run
 
 LOGOUT_REDIRECT_URL = "thanks"

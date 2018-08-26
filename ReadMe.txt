@@ -37,4 +37,11 @@ like `/lib/python3.6/site-packages/` there is a directory in your site-packages 
 is the django package that was installed﻿
 
 
+NPM
+Success! Created ynb-fe at /Users/chrismaltez/Desktop/pycharmprojects/YNBenv/ynb-fe
+Inside that directory, you can run several commands:
+We suggest that you begin by typing:
+
+  cd ynb-fe
+  npm start
 
