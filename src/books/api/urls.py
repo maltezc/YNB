@@ -1,4 +1,6 @@
 from django.conf.urls import url, include
+from django.conf.urls.static import static
+from django.conf import settings
 from rest_framework import routers
 from .views import (
                 BookViewSet,
@@ -18,4 +20,4 @@ urlpatterns = [
     # url(r'^$', BookAPIView.as_view(), name='list'),
     # url(r'^(?P<id>\d+)/$', BookAPIDetailView.as_view(), name='detail'), #shift to id because of lookup field # <pk> is built in method for giving view id. api/status/12
 
-]
+] + static(settings.MEDIA_URL, documuent_root=settings.MEDIA_ROOT)

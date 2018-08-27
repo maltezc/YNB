@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css'
 import {
-    Row, Col, CardBody, CardTitle, CardText
+    Row, Col, Card, CardBody, CardImg, CardTitle, CardText,
 } from 'reactstrap';
 import './index.css'
 
@@ -29,7 +29,7 @@ class YNB extends React.Component {
             <ul>
                 {this.state.items.map(function (item, index) {
                     return (
-                        <ContentItem item={item} />
+                        <ContentItem item={item} key={index} /*solves key/prop issue*/ />
 
                     )
                 }
@@ -43,16 +43,21 @@ class YNB extends React.Component {
 class ContentItem extends React.Component {
         render() {
             return (
-                <Row className="ContentItem" key={item.index}>
-                    <Col xs="6">
-                        <CardBody>
-                            <CardTitle>
-                                {this.props.item.title}
-                            </CardTitle>
-                            <CardText>
-                                {this.props.item.content}
-                            </CardText>
-                        </CardBody>
+                <Row className="ContentItem">
+                    <Col xs="3"></Col>
+                        <Col xs="6">
+                        <Card>
+                            <CardImg top width="100%"
+                                     src={this.props.item.image}></CardImg>
+                            <CardBody>
+                                <CardTitle>
+                                    {this.props.item.title}
+                                </CardTitle>
+                                <CardText>
+                                    {this.props.item.content}
+                                </CardText>
+                            </CardBody>
+                        </Card>
                     </Col>
                 </Row>
             )
