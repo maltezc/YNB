@@ -32,8 +32,6 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-#todo add react frontend
-
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -133,10 +131,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
+
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'YNBenv')
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'src')
+
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
 CORS_ORIGIN_WHITELIST = 'localhost:3000', #whitelists the localhost to run
 
 LOGOUT_REDIRECT_URL = "thanks"
+
+

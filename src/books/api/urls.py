@@ -20,4 +20,4 @@ urlpatterns = [
     # url(r'^$', BookAPIView.as_view(), name='list'),
     # url(r'^(?P<id>\d+)/$', BookAPIDetailView.as_view(), name='detail'), #shift to id because of lookup field # <pk> is built in method for giving view id. api/status/12
 
-] + static(settings.MEDIA_URL, documuent_root=settings.MEDIA_ROOT)
+] # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

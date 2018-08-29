@@ -17,3 +17,5 @@ class ThanksPage(TemplateView):
 
 class HowItWorksPage(TemplateView):
     template_name = 'HowItWorks.html'
+
+

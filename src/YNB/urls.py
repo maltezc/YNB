@@ -16,7 +16,8 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from . import views
-
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 
@@ -29,5 +30,6 @@ urlpatterns = [
     # url(r'^api/user/', include('accounts.api.user.urls', namespace='api-user')),
     url(r'^books/', include('books.api.urls', namespace='books')),
 
+  ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)# needs to be in top level
 
-]
+
