@@ -18,7 +18,7 @@ graphviz==0.8.2
 idna==2.6
 misaka==2.1.0
 olefile==0.44
-Pillow==4.3.0
+Pillow==9.0.0
 pycparser==2.18
 pydotplus==2.0.2
 pyOpenSSL==17.5.0
